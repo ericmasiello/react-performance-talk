@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 function CountButton({count, onClick}) {
   return <button onClick={onClick}>{count}</button>
@@ -18,6 +19,8 @@ function Example() {
   const increment = () => setCount(c => c + 1)
   return (
     <div>
+      <Link to="/">← Home</Link>
+      <h1>Unncessary Rerenders</h1>
       <div>
         <CountButton count={count} onClick={increment} />
       </div>

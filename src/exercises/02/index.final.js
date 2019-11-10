@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import useForceRerender from '../useForceRerender';
 
@@ -10,7 +10,7 @@ function expensiveRandomNumber(seed) {
 function Exercise() {
     const rerender = useForceRerender();
     const [seed, setSeed] = useState(1);
-    const number = expensiveRandomNumber(seed);
+    const number = useMemo(() => expensiveRandomNumber(seed), [seed]);
 
     return (
         <>

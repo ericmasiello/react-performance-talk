@@ -2,17 +2,17 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import useForceRerender from '../useForceRerender';
 
-function Name(props) {
+const Name = React.memo(function Name(props) {
     return (
         <p>Your name: {props.first} {props.last}</p>
     );
-}
+});
 
-function Description(props) {
+const Description = React.memo(function Description(props) {
     return (
         <p>Your description: {props.description}</p>
     );
-}
+});
 
 function Exercise() {
     const [fields, setFields] = useState({ first: '', last: '', description: '' });
